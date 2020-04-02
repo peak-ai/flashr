@@ -1,0 +1,28 @@
+{
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+    // "source.organizeImports": true
+    // ^^ https://github.com/microsoft/TypeScript/issues/36102 though closed, but not fixed
+  },
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+  // "typescript.implementationsCodeLens.enabled": true,
+  // "typescript.referencesCodeLens.enabled": true,
+  // "javascript.referencesCodeLens.enabled": true,
+  "editor.rulers": [100],
+  "files.associations": {
+    "tslint*.json": "jsonc"
+  }
+}

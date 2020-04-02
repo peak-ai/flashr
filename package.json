@@ -1,0 +1,54 @@
+{
+  "name": "@peak-ai/flashr",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "description": "Redux flash messages handling made simple..",
+  "repository": "git@github.com:peak-ai/flashr.git",
+  "author": "Shailendara Gupta <shailendra.gupta@peak.ai>",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "yarn run clean && yarn run build:cjs && yarn run build:esm && yarn run build:dist",
+    "build:esm": "tsc -p . -m ESNext --outDir esm",
+    "build:cjs": "tsc -p . -m CommonJS --outDir lib",
+    "build:dist": "rollup -c",
+    "clean": "rm -rf lib/ && rm -rf esm/ && rm -rf dist"
+  },
+  "dependencies": {
+    "tapable": "^1.1.3",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "@types/tapable": "^1.0.5",
+    "@types/uuid": "^7.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2",
+    "redux": "^4.0.5",
+    "rollup": "^2.3.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "aws-sdk": "^2.585.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix",
+      "eslint --cache"
+    ]
+  }
+}

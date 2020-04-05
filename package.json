@@ -1,6 +1,6 @@
 {
   "name": "@peak-ai/flashr",
-  "version": "0.0.1",
+  "version": "0.0.1-rc1",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "description": "Redux flash messages handling made simple..",
@@ -37,10 +37,8 @@
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "ts-node": "^8.8.1",
+    "typedoc": "^0.17.3",
     "typescript": "^3.8.3"
-  },
-  "peerDependencies": {
-    "aws-sdk": "^2.585.0"
   },
   "husky": {
     "hooks": {

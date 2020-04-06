@@ -1,4 +1,5 @@
 import { ConfigInterface } from './constants';
+import { AddMessageParamsInterface } from './actions';
 
 export interface MessageInterface {
   id: string;
@@ -20,7 +21,7 @@ export function createFlash({
   onActionClick,
   onClick,
 }: ConfigInterface) {
-  return (payload: MessageInterface): MessageInterface => ({
+  return (payload: AddMessageParamsInterface): MessageInterface => ({
     id: payload.id || keyFunction(),
     message: payload.message,
     messageType: payload.messageType,

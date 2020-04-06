@@ -19,7 +19,7 @@ export interface AddMessageActionInterface {
 }
 export type AddMessageActionCreator = (
   payload: AddMessageParamsInterface,
-  force: boolean
+  force?: boolean
 ) => AddMessageActionInterface;
 export const addFlashMessage: AddMessageActionCreator = (
   payload: AddMessageParamsInterface,

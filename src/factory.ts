@@ -6,7 +6,7 @@ export interface MessageInterface {
   messageType?: string;
   timeout: number;
   position: string;
-  icon?: string;
+  icon: string;
   onActionClick: () => void;
   onClick: () => void;
   className: string;

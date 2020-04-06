@@ -1,6 +1,10 @@
 import { createFlash, MessageInterface } from './factory';
 import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES, withDefaultsConfig } from './constants';
-import { AddMessageInterface, ClearAllMessageInterface, ClearMessageInterface } from './actions';
+import {
+  AddMessageActionInterface,
+  ClearAllMessageActionInterface,
+  ClearMessageActionInterface,
+} from './actions';
 import PriorityQueue from './queue';
 import { ConfigInterface } from './constants';
 import { InterfaceOptionalKeys } from './utils';
@@ -10,9 +14,9 @@ export interface FlashStateInterface {
 }
 
 export type FlashActionType =
-  | AddMessageInterface
-  | ClearMessageInterface
-  | ClearAllMessageInterface;
+  | AddMessageActionInterface
+  | ClearMessageActionInterface
+  | ClearAllMessageActionInterface;
 
 export function createReducerWithConfig(
   config: InterfaceOptionalKeys<ConfigInterface>
@@ -30,7 +34,7 @@ export function createReducerWithConfig(
     switch (action.type) {
       case ADD_MESSAGE: {
         let messages = [];
-        const { payload } = action as AddMessageInterface;
+        const { payload } = action as AddMessageActionInterface;
         const flash = createFlashWithConfig(payload);
         if (state.messages.length < defaultsConfig.stackCount) {
           messages = state.messages;
@@ -41,7 +45,7 @@ export function createReducerWithConfig(
         return { messages };
       }
       case CLEAR_MESSAGE: {
-        const { payload } = action as ClearMessageInterface;
+        const { payload } = action as ClearMessageActionInterface;
         const messages = state.messages.filter((msg) => msg.id !== payload.id);
         if (messages.length < defaultsConfig.stackCount) {
           const flash = queue.dequeue();

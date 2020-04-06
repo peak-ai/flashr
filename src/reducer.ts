@@ -5,7 +5,7 @@ import PriorityQueue from './queue';
 import { ConfigInterface } from './constants';
 import { InterfaceOptionalKeys } from './utils';
 
-interface FlashStateInterface {
+export interface FlashStateInterface {
   messages: MessageInterface[];
 }
 

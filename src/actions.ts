@@ -20,7 +20,10 @@ export interface ClearMessageInterface {
     id: string;
   };
 }
-export function clearFlashMessage({ id }: { id: string }): ClearMessageInterface {
+export interface ClearMessageParamsInterface {
+  id: string;
+}
+export function clearFlashMessage({ id }: ClearMessageParamsInterface): ClearMessageInterface {
   return {
     type: CLEAR_MESSAGE,
     payload: {

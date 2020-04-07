@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 import { ComparatorType } from './comparator';
-import { InterfaceOptionalKeys, noop } from './utils';
+import { noop } from './utils';
 import { maxComparator, noSortComparator } from './comparator';
 
 export const ADD_MESSAGE = '@@flashr/__ADD_MESSAGE__';
@@ -25,9 +25,7 @@ export interface ConfigInterface {
   onClick: () => void;
 }
 
-export function withDefaultsConfig(
-  config: InterfaceOptionalKeys<ConfigInterface>
-): ConfigInterface {
+export function withDefaultsConfig(config: Partial<ConfigInterface>): ConfigInterface {
   const sortQueueConfig = config.sortQueue || false;
   return {
     timeout: config.timeout || 5000,

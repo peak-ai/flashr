@@ -1,10 +1,9 @@
 import { ConfigInterface } from './constants';
-import { AddMessageParamsInterface } from './actions';
 
 export interface MessageInterface {
   id: string;
   message: string;
-  messageType?: string;
+  messageType: string;
   timeout: number;
   position: string;
   icon: string;
@@ -21,10 +20,10 @@ export function createFlash({
   onActionClick,
   onClick,
 }: ConfigInterface) {
-  return (payload: AddMessageParamsInterface): MessageInterface => ({
+  return (payload: Partial<MessageInterface>): MessageInterface => ({
     id: payload.id || keyFunction(),
-    message: payload.message,
-    messageType: payload.messageType,
+    message: payload.message || '',
+    messageType: payload.messageType || 'text',
     timeout: payload.timeout || timeout,
     position: payload.position || position,
     icon: payload.icon || '',

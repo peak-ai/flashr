@@ -26,9 +26,8 @@ import {
   FlashMessageMiddlewareCreator,
 } from './middleware';
 import { ComparatorType } from './comparator';
-import { InterfaceOptionalKeys } from './utils';
 
-type ConfigInterfaceWithOptionalKeys = InterfaceOptionalKeys<ConfigInterface>;
+type ConfigInterfaceWithOptionalKeys = Partial<ConfigInterface>;
 export {
   NO_OP_ACTION,
   ADD_MESSAGE,

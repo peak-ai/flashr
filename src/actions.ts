@@ -1,19 +1,9 @@
 import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES } from './constants';
+import { MessageInterface } from './factory';
 
-export interface AddMessageParamsInterface {
-  id?: string;
-  message: string;
-  messageType?: string;
-  timeout?: number;
-  position?: string;
-  icon?: string;
-  onActionClick?: () => void;
-  onClick?: () => void;
-  className?: string;
-  priority?: number;
-}
+export type AddMessageParamsInterface = Partial<MessageInterface> & { message: string };
 export interface AddMessageActionInterface {
-  type: string;
+  type: typeof ADD_MESSAGE;
   payload: AddMessageParamsInterface;
   force?: boolean;
 }
@@ -36,7 +26,7 @@ export interface ClearMessageParamsInterface {
   id: string;
 }
 export interface ClearMessageActionInterface {
-  type: string;
+  type: typeof CLEAR_MESSAGE;
   payload: {
     id: string;
   };
@@ -54,7 +44,7 @@ export const clearFlashMessage: ClearFlashMessageActionCreator = ({ id }) => {
 };
 
 export interface ClearAllMessageActionInterface {
-  type: string;
+  type: typeof CLEAR_ALL_MESSAGES;
 }
 export type ClearAllActionCreator = () => ClearAllMessageActionInterface;
 export const clearAll: ClearAllActionCreator = () => {

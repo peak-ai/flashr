@@ -7,19 +7,17 @@ import {
 } from './actions';
 import PriorityQueue from './queue';
 import { ConfigInterface } from './constants';
-import { InterfaceOptionalKeys } from './utils';
 
 export interface FlashStateInterface {
   messages: MessageInterface[];
 }
-
 export type FlashActionType =
   | AddMessageActionInterface
   | ClearMessageActionInterface
   | ClearAllMessageActionInterface;
 
 export function createReducerWithConfig(
-  config: InterfaceOptionalKeys<ConfigInterface>
+  config: Partial<ConfigInterface>
 ): (state: FlashStateInterface, action: FlashActionType) => FlashStateInterface {
   const defaultsConfig = withDefaultsConfig(config);
 
@@ -34,7 +32,7 @@ export function createReducerWithConfig(
     switch (action.type) {
       case ADD_MESSAGE: {
         let messages = [];
-        const { payload } = action as AddMessageActionInterface;
+        const { payload } = action;
         const flash = createFlashWithConfig(payload);
         if (state.messages.length < defaultsConfig.stackCount) {
           messages = state.messages;
@@ -45,7 +43,7 @@ export function createReducerWithConfig(
         return { messages };
       }
       case CLEAR_MESSAGE: {
-        const { payload } = action as ClearMessageActionInterface;
+        const { payload } = action;
         const messages = state.messages.filter((msg) => msg.id !== payload.id);
         if (messages.length < defaultsConfig.stackCount) {
           const flash = queue.dequeue();

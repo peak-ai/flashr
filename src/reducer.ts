@@ -34,7 +34,7 @@ export function createReducerWithConfig(
         let messages = [];
         const { payload } = action;
         const flash = createFlashWithConfig(payload);
-        if (state.messages.length < defaultsConfig.stackCount) {
+        if (state.messages.length >= defaultsConfig.stackCount) {
           messages = state.messages;
           queue.enqueue(flash);
         } else {

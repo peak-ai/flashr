@@ -2,24 +2,18 @@ import {
   addFlashMessage,
   clearFlashMessage,
   clearAll,
-  AddMessageParamsInterface,
-  AddMessageActionInterface,
+  AddMessageParams,
+  AddMessageAction,
   AddMessageActionCreator,
-  ClearMessageParamsInterface,
-  ClearMessageActionInterface,
+  ClearMessageParams,
+  ClearMessageAction,
   ClearFlashMessageActionCreator,
-  ClearAllMessageActionInterface,
+  ClearAllMessageAction,
   ClearAllActionCreator,
 } from './actions';
-import {
-  ADD_MESSAGE,
-  CLEAR_MESSAGE,
-  CLEAR_ALL_MESSAGES,
-  NO_OP_ACTION,
-  ConfigInterface,
-} from './constants';
-import { createFlash, MessageInterface } from './factory';
-import { createReducerWithConfig, FlashActionType, FlashStateInterface } from './reducer';
+import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES, NO_OP_ACTION, Config } from './constants';
+import { createFlash, Message } from './factory';
+import { createReducerWithConfig, FlashActionType, FlashState } from './reducer';
 import {
   createFlashMessageMiddleware,
   FlashMessageMiddlewareConfig,
@@ -27,7 +21,7 @@ import {
 } from './middleware';
 import { ComparatorType } from './comparator';
 
-type ConfigInterfaceWithOptionalKeys = Partial<ConfigInterface>;
+type ConfigWithOptionalKeys = Partial<Config>;
 export {
   NO_OP_ACTION,
   ADD_MESSAGE,
@@ -40,19 +34,19 @@ export {
   clearFlashMessage,
   clearAll,
   // intefaces
-  AddMessageParamsInterface,
-  AddMessageActionInterface,
+  AddMessageParams,
+  AddMessageAction,
   AddMessageActionCreator,
-  ClearMessageParamsInterface,
-  ClearMessageActionInterface,
+  ClearMessageParams,
+  ClearMessageAction,
   ClearFlashMessageActionCreator,
-  ClearAllMessageActionInterface,
+  ClearAllMessageAction,
   ClearAllActionCreator,
   ComparatorType,
-  ConfigInterfaceWithOptionalKeys as ConfigInterface,
+  ConfigWithOptionalKeys as Config,
   FlashMessageMiddlewareConfig,
   FlashMessageMiddlewareCreator,
-  FlashStateInterface,
+  FlashState,
   FlashActionType,
-  MessageInterface,
+  Message,
 };

@@ -1,34 +1,27 @@
-import { createFlash, MessageInterface } from './factory';
+import { createFlash, Message } from './factory';
 import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES, withDefaultsConfig } from './constants';
-import {
-  AddMessageActionInterface,
-  ClearAllMessageActionInterface,
-  ClearMessageActionInterface,
-} from './actions';
+import { AddMessageAction, ClearAllMessageAction, ClearMessageAction } from './actions';
 import PriorityQueue from './queue';
-import { ConfigInterface } from './constants';
+import { Config } from './constants';
 
-export interface FlashStateInterface {
-  messages: MessageInterface[];
+export interface FlashState {
+  messages: Message[];
 }
-export type FlashActionType =
-  | AddMessageActionInterface
-  | ClearMessageActionInterface
-  | ClearAllMessageActionInterface;
+export type FlashActionType = AddMessageAction | ClearMessageAction | ClearAllMessageAction;
 
 export function createReducerWithConfig(
-  config: Partial<ConfigInterface>
-): (state: FlashStateInterface, action: FlashActionType) => FlashStateInterface {
+  config: Partial<Config>
+): (state: FlashState, action: FlashActionType) => FlashState {
   const defaultsConfig = withDefaultsConfig(config);
 
   const createFlashWithConfig = createFlash(defaultsConfig);
-  const queue = new PriorityQueue<MessageInterface>(defaultsConfig.comparator);
+  const queue = new PriorityQueue<Message>(defaultsConfig.comparator);
 
-  const initialState: FlashStateInterface = {
+  const initialState: FlashState = {
     messages: [],
   };
 
-  return (state = initialState, action: FlashActionType): FlashStateInterface => {
+  return (state = initialState, action: FlashActionType): FlashState => {
     switch (action.type) {
       case ADD_MESSAGE: {
         let messages = [];

@@ -1,6 +1,6 @@
-import { ConfigInterface } from './constants';
+import { Config } from './constants';
 
-export interface MessageInterface {
+export interface Message {
   id: string;
   message: string;
   messageType: string;
@@ -19,14 +19,8 @@ export interface MessageInterface {
   priority: number;
 }
 
-export function createFlash({
-  timeout,
-  position,
-  keyFunction,
-  onActionClick,
-  onClick,
-}: ConfigInterface) {
-  return (payload: Partial<MessageInterface>): MessageInterface => ({
+export function createFlash({ timeout, position, keyFunction, onActionClick, onClick }: Config) {
+  return (payload: Partial<Message>): Message => ({
     id: keyFunction(),
     message: payload.message || '',
     messageType: payload.messageType || 'text',

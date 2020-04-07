@@ -8,7 +8,7 @@ export const CLEAR_MESSAGE = '@@flashr/__CLEAR_MESSAGE__';
 export const CLEAR_ALL_MESSAGES = '@@flashr/__CLEAR_ALL_MESSAGES__';
 export const NO_OP_ACTION = '@@flashr/__NO_OP_ACTION__';
 
-export interface ConfigInterface {
+export interface Config {
   timeout: number;
   position:
     | 'left-top'
@@ -25,7 +25,7 @@ export interface ConfigInterface {
   onClick: () => void;
 }
 
-export function withDefaultsConfig(config: Partial<ConfigInterface>): ConfigInterface {
+export function withDefaultsConfig(config: Partial<Config>): Config {
   const sortQueueConfig = config.sortQueue || false;
   return {
     timeout: config.timeout || 5000,

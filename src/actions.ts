@@ -1,18 +1,18 @@
 import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES } from './constants';
-import { MessageInterface } from './factory';
+import { Message } from './factory';
 
-export type AddMessageParamsInterface = Partial<MessageInterface> & { message: string };
-export interface AddMessageActionInterface {
+export type AddMessageParams = Partial<Message> & { message: string };
+export interface AddMessageAction {
   type: typeof ADD_MESSAGE;
-  payload: AddMessageParamsInterface;
+  payload: AddMessageParams;
   force?: boolean;
 }
 export type AddMessageActionCreator = (
-  payload: AddMessageParamsInterface,
+  payload: AddMessageParams,
   force?: boolean
-) => AddMessageActionInterface;
+) => AddMessageAction;
 export const addFlashMessage: AddMessageActionCreator = (
-  payload: AddMessageParamsInterface,
+  payload: AddMessageParams,
   force = false
 ) => {
   return {
@@ -22,18 +22,16 @@ export const addFlashMessage: AddMessageActionCreator = (
   };
 };
 
-export interface ClearMessageParamsInterface {
+export interface ClearMessageParams {
   id: string;
 }
-export interface ClearMessageActionInterface {
+export interface ClearMessageAction {
   type: typeof CLEAR_MESSAGE;
   payload: {
     id: string;
   };
 }
-export type ClearFlashMessageActionCreator = (
-  payload: ClearMessageParamsInterface
-) => ClearMessageActionInterface;
+export type ClearFlashMessageActionCreator = (payload: ClearMessageParams) => ClearMessageAction;
 export const clearFlashMessage: ClearFlashMessageActionCreator = ({ id }) => {
   return {
     type: CLEAR_MESSAGE,
@@ -43,10 +41,10 @@ export const clearFlashMessage: ClearFlashMessageActionCreator = ({ id }) => {
   };
 };
 
-export interface ClearAllMessageActionInterface {
+export interface ClearAllMessageAction {
   type: typeof CLEAR_ALL_MESSAGES;
 }
-export type ClearAllActionCreator = () => ClearAllMessageActionInterface;
+export type ClearAllActionCreator = () => ClearAllMessageAction;
 export const clearAll: ClearAllActionCreator = () => {
   return {
     type: CLEAR_ALL_MESSAGES,

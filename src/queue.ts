@@ -4,13 +4,13 @@ interface QueueItem {
   priority: number;
 }
 
-interface PriorityQueueInteface<T> {
+interface PriorityQueue<T> {
   enqueue(arg: T): void;
   dequeue(): T | void;
   clearQueue(): void;
 }
 
-class PriorityQueue<T extends QueueItem> implements PriorityQueueInteface<T> {
+class PriorityQueue<T extends QueueItem> implements PriorityQueue<T> {
   private items: T[];
   private comparator: ComparatorType;
 

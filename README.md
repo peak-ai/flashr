@@ -1,6 +1,6 @@
 # Flashr
 
-Flash Messages handing with redux made simple.
+Flash Messages handling with redux made simple.
 
 ## To install
 
@@ -51,18 +51,18 @@ interface Config {
   */
   position: 'left-top' | 'center-top' | 'right-top' | 'left-bottom' | 'center-bottom' | 'right-bottom';
   /*
-    Internally we maintain a queue for handing messages, this param gives only the desired number of messages at any point in time, rest will be available in the queue and added as messages are removed from message array.
+    Internally we maintain a queue for handling messages, this param gives only the desired number of messages at any point in time, rest will be available in the queue and added as messages are removed from message array.
     Default: 3
   */
   stackCount: number;
   /*
-    The above-said queue is a priority queue, this parameter tells need to sort that queue.
+    The above-said queue is a priority queue, this parameter tells if needs to be sorted.
     Default: false
   */
   sortQueue: boolean;
   /*
     The above-said queue accepts custom comparator function, which somewhat works like Array.prototype.sort's callback function.
-    It provides 2 numbers as input, a and b, return less than 0 if a is smaller and greater than one b is smaller.
+    It provides 2 numbers as input, a and b, return less than 0 if a is small || greater than 0 if b is small.
     For more insight see usage at `src/queue.ts:L26`
     Default: (a, b) => a - b; 
     Higher priority elements dequeue first.
@@ -74,13 +74,13 @@ interface Config {
   */
   keyFunction: () => string;
   /*
-    Notification can have an action associated with them, like undo, stop, etc...
-    This can be overridden in addFlashMessage api.
+    Notification can have an action associated with them, like undo, stop etc...
+    This can be overridden in addFlashMessage API.
   */
   onActionClick: () => void;
   /*
-    This in general onClick whicj can be used to add click on complete notification
-    This can be overridden in addFlashMessage api.
+    This in general onClick which can be used to add click on complete notification
+    This can be overridden in addFlashMessage API.
   */
   onClick: () => void;
 }
@@ -91,7 +91,9 @@ interface Config {
 ```typescript
 interface Config {
   /*
+    Optional
     With middleware you can hook custom functions before a message is added to the queue and after a message is added. this flag is used to disable those hooks.
+    Default: false
   */
   disableHooks: boolean;
 }
@@ -167,8 +169,9 @@ interface Message {
   className: string;
   /*
     Optional
-    Add priority to a message, when enabled sorts, called comparator function if passed, else default to maxComparator, higher priority elements as first in the queue.
-    Defaults to 0
+    Add priority to a message
+    When enabled sorting of queue (see sortQueue Option), comparator function is called, if passed, else use maxComparator function, higher priority elements at first in the queue.
+    Default: 0
   */
   priority: number;
 }
@@ -179,7 +182,7 @@ interface Message {
 ```typescript
 interface ClearMessage {
   /*
-    Removes notification from messages array. Currently, there is no option to remove messages from the queue, except clearAll.
+    Removes notification from message array for given id. Currently, there is no option to remove messages from the queue, except clearAll.
   */
   id: string;
 }

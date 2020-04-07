@@ -5,7 +5,13 @@ export interface MessageInterface {
   message: string;
   messageType: string;
   timeout: number;
-  position: string;
+  position:
+    | 'left-top'
+    | 'center-top'
+    | 'right-top'
+    | 'left-bottom'
+    | 'center-bottom'
+    | 'right-bottom';
   icon: string;
   onActionClick: () => void;
   onClick: () => void;
@@ -21,7 +27,7 @@ export function createFlash({
   onClick,
 }: ConfigInterface) {
   return (payload: Partial<MessageInterface>): MessageInterface => ({
-    id: payload.id || keyFunction(),
+    id: keyFunction(),
     message: payload.message || '',
     messageType: payload.messageType || 'text',
     timeout: payload.timeout || timeout,

@@ -1,7 +1,7 @@
 import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES } from './constants';
 
 export interface AddMessageParamsInterface {
-  id: string;
+  id?: string;
   message: string;
   messageType?: string;
   timeout?: number;

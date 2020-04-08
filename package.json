@@ -12,6 +12,9 @@
     "build:esm": "tsc -p . -m ESNext --outDir esm",
     "build:cjs": "tsc -p . -m CommonJS --outDir lib",
     "build:dist": "rollup -c",
+    "build:docs": "rm -rf docs && typedoc --name Flash src",
+    "lint": "eslint src/**/*.ts",
+    "format:check": "prettier --check src/**/*.ts",
     "clean": "rm -rf lib/ && rm -rf esm/ && rm -rf dist"
   },
   "dependencies": {

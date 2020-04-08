@@ -1,6 +1,6 @@
 {
   "name": "@peak-ai/flashr",
-  "version": "0.0.1-rc6",
+  "version": "0.0.1-rc7",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "description": "Redux flash messages handling made simple..",
@@ -9,13 +9,13 @@
   "license": "BSD-3-Clause",
   "scripts": {
     "build": "yarn run clean && yarn run build:cjs && yarn run build:esm && yarn run build:dist",
-    "build:esm": "tsc -p . -m ESNext --outDir esm",
     "build:cjs": "tsc -p . -m CommonJS --outDir lib",
+    "build:esm": "tsc -p . -m ESNext --outDir esm",
     "build:dist": "rollup -c",
     "build:docs": "rm -rf docs && typedoc --name Flash src",
-    "lint": "eslint src/**/*.ts",
+    "clean": "rm -rf lib/ && rm -rf esm/ && rm -rf dist",
     "format:check": "prettier --check src/**/*.ts",
-    "clean": "rm -rf lib/ && rm -rf esm/ && rm -rf dist"
+    "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
     "tapable": "^1.1.3",

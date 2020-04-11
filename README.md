@@ -2,6 +2,22 @@
 
 Flash Messages handling with redux made simple.
 
+![npm ico](https://nodeico.herokuapp.com/@peak-ai/flashr.svg)
+
+![dependency status](https://img.shields.io/librariesio/release/npm/@peak-ai/flashr)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@peak-ai/flashr)
+![npm](https://img.shields.io/npm/dw/@peak-ai/flashr)
+![GitHub issues](https://img.shields.io/github/issues/peak-ai/flashr)
+![GitHub](https://img.shields.io/github/license/peak-ai/flashr)
+![npm (scoped)](https://img.shields.io/npm/v/@peak-ai/flashr)
+![GitHub contributors](https://img.shields.io/github/contributors/peak-ai/flashr)
+![GitHub top language](https://img.shields.io/github/languages/top/peak-ai/flashr)
+![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/@peak-ai/flashr)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/peak-ai/flashr/Lint%20and%20Build)
+![GitHub forks](https://img.shields.io/github/forks/peak-ai/flashr?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/peak-ai/flashr?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/peak-ai/flashr?style=social)
+
 ## To install
 
 ```bash
@@ -49,7 +65,13 @@ interface Config {
     This can be overridden in addFlashMessage API.
     Default: 'left-top'
   */
-  position: 'left-top' | 'center-top' | 'right-top' | 'left-bottom' | 'center-bottom' | 'right-bottom';
+  position:
+    | 'left-top'
+    | 'center-top'
+    | 'right-top'
+    | 'left-bottom'
+    | 'center-bottom'
+    | 'right-bottom';
   /*
     Internally we maintain a queue for handling messages, this param gives only the desired number of messages at any point in time, rest will be available in the queue and added as messages are removed from message array.
     Default: 3

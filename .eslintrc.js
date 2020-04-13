@@ -19,16 +19,5 @@ module.exports = {
   rules: {
     'object-shorthand': ['error', 'always'],
     'spaced-comment': ['error', 'always'],
-    'valid-jsdoc': [
-      'error',
-      {
-        requireReturn: false,
-        requireReturnDescription: false,
-        requireParamDescription: true,
-        prefer: {
-          return: 'returns',
-        },
-      },
-    ],
   },
 };

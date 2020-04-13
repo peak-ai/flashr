@@ -70,4 +70,5 @@ package-lock.json
 dist/
 .DS_Store
 lib/
+docs/
 !.vscode

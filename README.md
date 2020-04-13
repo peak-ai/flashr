@@ -14,9 +14,6 @@ Flash Messages handling with redux made simple.
 ![GitHub top language](https://img.shields.io/github/languages/top/peak-ai/flashr)
 ![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/@peak-ai/flashr)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/peak-ai/flashr/Lint%20and%20Build)
-![GitHub forks](https://img.shields.io/github/forks/peak-ai/flashr?style=social)
-![GitHub Stars](https://img.shields.io/github/stars/peak-ai/flashr?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/peak-ai/flashr?style=social)
 
 ## To install
 

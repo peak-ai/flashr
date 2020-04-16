@@ -2,18 +2,19 @@
 
 Flash Messages handling with redux made simple.
 
-![npm ico](https://nodeico.herokuapp.com/@peak-ai/flashr.svg)
+![](https://nodeico.herokuapp.com/@peak-ai/flashr.svg)
 
-![dependency status](https://img.shields.io/librariesio/release/npm/@peak-ai/flashr)
-![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@peak-ai/flashr)
-![npm](https://img.shields.io/npm/dw/@peak-ai/flashr)
-![GitHub issues](https://img.shields.io/github/issues/peak-ai/flashr)
-![GitHub](https://img.shields.io/github/license/peak-ai/flashr)
-![npm (scoped)](https://img.shields.io/npm/v/@peak-ai/flashr)
-![GitHub contributors](https://img.shields.io/github/contributors/peak-ai/flashr)
-![GitHub top language](https://img.shields.io/github/languages/top/peak-ai/flashr)
-![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/@peak-ai/flashr)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/peak-ai/flashr/Lint%20and%20Build)
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![](https://img.shields.io/librariesio/release/npm/@peak-ai/flashr)
+![](https://img.shields.io/bundlephobia/minzip/@peak-ai/flashr)
+![](https://img.shields.io/npm/dw/@peak-ai/flashr)
+![](https://img.shields.io/github/issues/peak-ai/flashr)
+![](https://img.shields.io/github/license/peak-ai/flashr)
+![](https://img.shields.io/npm/v/@peak-ai/flashr)
+![](https://img.shields.io/github/contributors/peak-ai/flashr)
+![](https://img.shields.io/github/languages/top/peak-ai/flashr)
+![](https://img.shields.io/snyk/vulnerabilities/npm/@peak-ai/flashr)
+![](https://img.shields.io/github/workflow/status/peak-ai/flashr/Lint%20and%20Build)
 
 ## To install
 

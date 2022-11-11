@@ -1,7 +1,8 @@
+import React from 'react';
 import { ADD_MESSAGE, CLEAR_MESSAGE, CLEAR_ALL_MESSAGES } from './constants';
 import { Message } from './factory';
 
-export type AddMessageParams = Partial<Message> & { message: string };
+export type AddMessageParams = Partial<Message> & { message: string | React.ReactNode };
 export interface AddMessageAction {
   type: typeof ADD_MESSAGE;
   payload: AddMessageParams;

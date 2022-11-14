@@ -1,6 +1,6 @@
 {
   "name": "@peak-ai/flashr",
-  "version": "1.0.1-rc.0",
+  "version": "1.1.0-rc.0",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "description": "Redux flash messages handling made simple..",

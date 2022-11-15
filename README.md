@@ -221,3 +221,11 @@ No params needed _that is easy_
 ## License
 
 BSD-3-Clause
+
+## Release Process
+
+- Please place credentials for the `peak-ai` npm account in an `.npmrc` file at the root of project or in home directory.
+- Do `yarn build`.
+- Run `npm version <version>` command. If you want to release a RC version, run `npm version prerelease --preid=rc`.
+- Run `npm publish --tag next` command.
+- Commit and push the changes.

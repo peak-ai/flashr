@@ -1,8 +1,9 @@
+import React from 'react';
 import { Config } from './constants';
 
 export interface Message {
   id: string;
-  message: string;
+  message: string | React.ReactNode;
   messageType: string;
   timeout: number;
   position:

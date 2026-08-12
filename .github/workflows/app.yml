@@ -7,10 +7,10 @@ on:
 
 jobs:
   LinterCheck:
-    runs-on: ubuntu-latest
+    runs-on: uipath-ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e  # v2.8.0
+      - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e  # v1.4.6
         with:
           node-version: '10.x'
       - name: Linter
@@ -19,10 +19,10 @@ jobs:
           yarn lint
 
   FormattingCheck:
-    runs-on: ubuntu-latest
+    runs-on: uipath-ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e  # v2.8.0
+      - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e  # v1.4.6
         with:
           node-version: '10.x'
       - name: Formatting Check
@@ -31,10 +31,10 @@ jobs:
           yarn format:check
 
   BuildCheck:
-    runs-on: ubuntu-latest
+    runs-on: uipath-ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e  # v2.8.0
+      - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e  # v1.4.6
         with:
           node-version: '10.x'
       - name: Build Status
